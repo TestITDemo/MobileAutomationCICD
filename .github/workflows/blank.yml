@@ -1,0 +1,53 @@
+name: Build and run dockerized tests
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'QA/**'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# TODO: create and run the self-hosted runner with a testit-runner tag/label
+jobs:
+   CleanWorkFolder:
+     runs-on: [self-hosted, testit-runner]
+     steps:
+       - name: Clean/Remove _work folder
+         run: sudo rm -rf /home/testitrunner/actions-runner/_work
+
+   buildDockerImage:
+     needs: CleanWorkFolder
+     runs-on: [self-hosted, testit-runner]
+     steps:
+       - uses: actions/checkout@v3
+       - name: Build docker image
+         working-directory: ./QA
+         run: docker build -t localhost:5000/rf-appium-android:v1 .
+       - name: Deploy the Docker image
+         run: docker push localhost:5000/rf-appium-android:v1
+
+   runDockerImage:
+    needs: buildDockerImage
+    runs-on: [self-hosted, testit-runner]
+    container:
+      image: localhost:5000/rf-appium-android:v1
+      options: --privileged --expose=4723 --expose=5554 --expose=5037
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set script permission (run.sh)
+        run: chmod +x ./QA/run.sh
+      - name: Start Android emulator and run Robot Framework tests on it
+        run: ./QA/run.sh
+      - name: Archive test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: results/
+          retention-days: 7
+      - name: Set script permission (validate_result.sh)
+        run: chmod +x ./QA/validate_result.sh
+      - name: Ready for release
+        run: ./QA/validate_result.sh
