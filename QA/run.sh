@@ -1,9 +1,8 @@
 #!/bin/sh
 
-echo "run.sh started."
-
 # Accepting parameters
 GROUP=$1
+
 echo "run.sh started with group: $GROUP."
 
 # Delete EMU lock files
