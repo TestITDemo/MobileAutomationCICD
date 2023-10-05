@@ -33,7 +33,8 @@ jobs:
     runs-on: [self-hosted, testit-runner]
     strategy:
       matrix:
-        script: [run.sh] # TODO: PARAMS
+        script: [run.sh]
+        params: [group1, group2]
     container:
       image: localhost:5000/rf-appium-android:v1
       options: --privileged --expose=4723 --expose=5554 --expose=5037
@@ -42,7 +43,7 @@ jobs:
       - name: Set script permission (run.sh)
         run: chmod +x ./QA/run.sh
       - name: Start Android emulator and run Robot Framework tests on it
-        run: ./QA/run.sh
+        run: ./QA/${{ matrix.script }} ${{ matrix.params }} # Use matrix values here
       - name: Archive test results
         uses: actions/upload-artifact@v3
         with:
