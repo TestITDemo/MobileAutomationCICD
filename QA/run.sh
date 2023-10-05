@@ -67,6 +67,17 @@ echo "Installing ApiDemos-debug.apk..."
 #		!Before you do this, check that you have done the TODO in Dockerfile
 adb -e install /opt/android-sdk/platform-tools/ApiDemos-debug.apk
 
+#appium version
+echo "Appium version:"
+appium -v
+
+#install uiautomator2
+appium driver install uiautomator2 2> /dev/null
+
+#installed drivers
+echo "Installed drivers:"
+appium driver list --installed
+
 # Run robot framework tests based on the given group parameter
 echo "Calling RobotFramework test suites..."
 
