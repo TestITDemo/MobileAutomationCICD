@@ -74,14 +74,14 @@ case $GROUP in
     group1)
         # TOCHECK 2: Adjust the paths and commands for group1 tests
         mkdir /RF/results
-        mkdir /RF/results/<TestNameGroup1>
-        robot -d results/<TestNameGroup1> --timestampoutput /RF/AutomationDemo/tests/test_suites/sample_test_suite_1.robot
+        mkdir /RF/results/sample_test_suite_1
+        robot -d results/sample_test_suite_1 --timestampoutput /RF/AutomationDemo/tests/test_suites/sample_test_suite_1.robot
         ;;
     group2)
         # TOCHECK 2: Adjust the paths and commands for group2 tests
         mkdir /RF/results
-        mkdir /RF/results/<TestNameGroup2>
-        robot -d results/<TestNameGroup2> --timestampoutput /RF/AutomationDemo/tests/test_suites/sample_test_suite_2.robot
+        mkdir /RF/results/sample_test_suite_1
+        robot -d results/sample_test_suite_1 --timestampoutput /RF/AutomationDemo/tests/test_suites/sample_test_suite_2.robot
         ;;
     *)
         echo "Unknown group: $GROUP. Skipping tests."
