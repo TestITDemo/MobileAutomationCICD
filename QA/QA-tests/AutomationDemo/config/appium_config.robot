@@ -12,6 +12,7 @@ ${APP_ACTIVITY}    .ApiDemos
 ${COMMAND_TIMEOUT}    200000
 ${ANDROID_APP}    ${CURDIR}/../resources/app/ApiDemos-debug.apk
 ${PLATFORM_VERSION}    11
+${appium:automationName}    UiAutomator2
 
 *** Keywords ***
 Initialize Appium
