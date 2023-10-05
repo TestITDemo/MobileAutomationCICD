@@ -4,7 +4,7 @@ Library           AppiumLibrary
 *** Variables ***
 ${APPIUM_SERVER_HOST}    localhost
 ${APPIUM_SERVER_PORT}    4723
-${APPIUM_SERVER}    http://${APPIUM_SERVER_HOST}:${APPIUM_SERVER_PORT}/wd/hub
+${APPIUM_SERVER}    http://${APPIUM_SERVER_HOST}:${APPIUM_SERVER_PORT}/
 ${PLATFORM_NAME}    android
 ${DEVICE_NAME}    emulator-5554
 ${APP_PACKAGE}    io.appium.android.apis
