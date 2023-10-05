@@ -13,7 +13,3 @@ ${COMMAND_TIMEOUT}    200000
 ${ANDROID_APP}    ${CURDIR}/../resources/app/ApiDemos-debug.apk
 ${PLATFORM_VERSION}    11
 ${appium:automationName}    UiAutomator2
-
-*** Keywords ***
-Initialize Appium
-    Open Application    http://localhost:4723/wd/hub    platformName=${PLATFORM_NAME}    platformVersion=${ANDROID_PLATFORM_VERSION}    deviceName=${DEVICE_NAME}    appPackage=${APP_PACKAGE}    appActivity=${APP_ACTIVITY}
