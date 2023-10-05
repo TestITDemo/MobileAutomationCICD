@@ -82,5 +82,5 @@ COPY QA-tests /RF
 # TOCHECK: copy an actual zipped apk into the QA folder in the repository,
 #		then replace the <ZipFileName> parts and use(uncomment) the lines below.
 #		After that check out for more TODO in the run.sh file
-COPY QA-tests/AutomationDemo/resources/app/ApiDemos-debug.apk /
+COPY QA-tests/AutomationDemo/resources/app/ApiDemos-debug.apk /opt/android-sdk/platform-tools
 #RUN unzip <ZipFileName>.zip -d /opt/android-sdk/platform-tools && rm -v /<ZipFileName>.zip
