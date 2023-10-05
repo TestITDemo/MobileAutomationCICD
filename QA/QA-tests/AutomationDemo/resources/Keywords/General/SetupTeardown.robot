@@ -8,13 +8,13 @@ Library           OperatingSystem
 *** Keywords ***
 Suite Setup
     Log    Suite setup
-    Run Process    taskkill    /F    /IM    node.exe
+    Run Process    pkill    -f    node
     Start Process    appium    -a    ${APPIUM_SERVER_HOST}    -p    ${APPIUM_SERVER_PORT}    shell=True    alias=appiumserver    stdout=${CURDIR}/appium_stdout.txt    stderr=${CURDIR}/appium_stderr.txt
 
 Suite Teardown
     #Suite tardown steps
     Log    Suite teardown
-    Run Process    taskkill    /F    /IM    node.exe
+    Run Process    pkill    -f    node
 
 Test Setup
     Log    ${CURDIR}
