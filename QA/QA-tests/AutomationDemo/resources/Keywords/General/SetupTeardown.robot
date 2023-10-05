@@ -19,7 +19,7 @@ Suite Teardown
 
 Test Setup
     Log    ${CURDIR}
-    Open Application    ${APPIUM_SERVER}    app=${ANDROID_APP}    deviceName=${DEVICE_NAME}    platformName=${PLATFORM_NAME}    platformVersion=${PLATFORM_VERSION}    appActivity=${APP_ACTIVITY}    autoGrantPermissions=true    noReset=true    newCommandTimeout=${COMMAND_TIMEOUT}
+    Open Application    ${APPIUM_SERVER}    app=${ANDROID_APP}    automationName=${appium:automationName}    deviceName=${DEVICE_NAME}    platformName=${PLATFORM_NAME}    platformVersion=${PLATFORM_VERSION}    appActivity=${APP_ACTIVITY}    autoGrantPermissions=true    noReset=true    newCommandTimeout=${COMMAND_TIMEOUT}
     Verify App Started
 
 Test Teardown
