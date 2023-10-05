@@ -2,6 +2,10 @@
 
 echo "run.sh started."
 
+# Accepting parameters
+GROUP=$1
+echo "run.sh started with group: $GROUP."
+
 # Delete EMU lock files
 echo "Delete EMU avd lock files"
 rm -f /root/.android/avd/EMU.avd/multiinstance.lock /root/.android/avd/EMU.avd/hardware-qemu.ini.lock
@@ -64,15 +68,28 @@ echo "Installing <APKName>.apk..."
 #		!Before you do this, check that you have done the TODO in Dockerfile
 #adb -e install /opt/android-sdk/platform-tools/<APKName>.apk
 
-# Run robot framework tests
+# Run robot framework tests based on the given group parameter
 echo "Calling RobotFramework test suites..."
 
-# TODO 2: create the tests then use the correct paths to run/call them here
-#mkdir /RF/results
-#mkdir /RF/results/<TestName>
-#robot -d results/<TestName> --timestampoutput /RF/robots/<TestName>.robot
+case $GROUP in
+    group1)
+        # TODO 2: Adjust the paths and commands for group1 tests
+        #mkdir /RF/results
+        #mkdir /RF/results/<TestNameGroup1>
+        #robot -d results/<TestNameGroup1> --timestampoutput /RF/robots/<TestNameGroup1>.robot
+        ;;
+    group2)
+        # TODO 2: Adjust the paths and commands for group2 tests
+        #mkdir /RF/results
+        #mkdir /RF/results/<TestNameGroup2>
+        #robot -d results/<TestNameGroup2> --timestampoutput /RF/robots/<TestNameGroup2>.robot
+        ;;
+    *)
+        echo "Unknown group: $GROUP. Skipping tests."
+        ;;
+esac
 
-echo "Robotframework test suites have been successfully run."
+echo "Robotframework test suites for $GROUP have been successfully run."
 
 # Keep the container running
 #tail -f /dev/null
