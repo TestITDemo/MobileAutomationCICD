@@ -11,7 +11,7 @@ ${APP_PACKAGE}    io.appium.android.apis
 ${APP_ACTIVITY}    .ApiDemos
 ${COMMAND_TIMEOUT}    200000
 ${ANDROID_APP}    ${CURDIR}/../resources/app/ApiDemos-debug.apk
-${PLATFORM_VERSION}    12
+${PLATFORM_VERSION}    11
 
 *** Keywords ***
 Initialize Appium
