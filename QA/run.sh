@@ -38,7 +38,7 @@ done
 echo "Emulator started successfully!"
 adb devices
 
-# Check full boot
+# Wait for full Android OS boot, up to 120 seconds
 SECONDS=0
 WAIT_TIME=120
 while [ "$(adb shell getprop sys.boot_completed)" != "1" ]; do
