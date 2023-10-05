@@ -102,4 +102,4 @@ esac
 echo "Robotframework test suites for $GROUP have been successfully run."
 
 # Keep the container running
-#tail -f /dev/null
+tail -f /dev/null
