@@ -68,7 +68,7 @@ RUN pip3 install robotframework \
                 pyperclip
 
 # Install Appium and appium-doctor
-RUN npm install -g appium \
+RUN npm install -g appium@latest \
                 wd \
                 appium-doctor
 
