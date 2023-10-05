@@ -7,7 +7,6 @@ Library           OperatingSystem
 
 *** Keywords ***
 Suite Setup
-    Sleep    30s
     Log    Suite setup
     Run Process    pkill    -f    node
     Start Process    appium    -a    ${APPIUM_SERVER_HOST}    -p    ${APPIUM_SERVER_PORT}    shell=True    alias=appiumserver    stdout=${CURDIR}/appium_stdout.txt    stderr=${CURDIR}/appium_stderr.txt
