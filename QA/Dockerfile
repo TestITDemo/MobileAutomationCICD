@@ -57,7 +57,7 @@ RUN pip3 install robotframework \
                 google-auth \
                 google-auth-httplib2 \
                 google-auth-oauthlib \
-                opencv-python --upgrade \
+                opencv-python \
                 QrScan \
                 requests --upgrade \
                 pytz \
@@ -67,7 +67,7 @@ RUN pip3 install robotframework \
                 jsondiff \
                 pyperclip
 
-# Install Appium and appium-doctor
+# Install Appium, appium-doctor, and uiautomator2 driver
 RUN npm install -g appium@latest \
                 wd \
                 appium-doctor
