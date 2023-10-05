@@ -3,10 +3,10 @@ name: Build and run dockerized tests
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-    paths:
-      - 'QA/**'
+  #push:
+   # branches: [ "main" ]
+    #paths:
+     # - 'QA/**'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -32,6 +32,9 @@ jobs:
    runDockerImage:
     needs: buildDockerImage
     runs-on: [self-hosted, testit-runner]
+    strategy:
+      matrix:
+        script: [run.sh] # TODO: PARAMS
     container:
       image: localhost:5000/rf-appium-android:v1
       options: --privileged --expose=4723 --expose=5554 --expose=5037
