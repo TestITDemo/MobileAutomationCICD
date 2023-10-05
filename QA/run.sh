@@ -62,26 +62,26 @@ echo "Android OS booted successfully!"
 
 echo "Wait 10 sec before apk install..."
 sleep 10
-echo "Installing <APKName>.apk..."
-# TODO 1: replace the <APKName> part with the correct name, then use(uncomment) the line below.
+echo "Installing ApiDemos-debug.apk..."
+# TOCHECK 1: replace the <APKName> part with the correct name, then use(uncomment) the line below.
 #		!Before you do this, check that you have done the TODO in Dockerfile
-#adb -e install /opt/android-sdk/platform-tools/<APKName>.apk
+adb -e install /opt/android-sdk/platform-tools/ApiDemos-debug.apk
 
 # Run robot framework tests based on the given group parameter
 echo "Calling RobotFramework test suites..."
 
 case $GROUP in
     group1)
-        # TODO 2: Adjust the paths and commands for group1 tests
-        #mkdir /RF/results
-        #mkdir /RF/results/<TestNameGroup1>
-        #robot -d results/<TestNameGroup1> --timestampoutput /RF/robots/<TestNameGroup1>.robot
+        # TOCHECK 2: Adjust the paths and commands for group1 tests
+        mkdir /RF/results
+        mkdir /RF/results/<TestNameGroup1>
+        robot -d results/<TestNameGroup1> --timestampoutput /RF/AutomationDemo/tests/test_suites/sample_test_suite_1.robot
         ;;
     group2)
-        # TODO 2: Adjust the paths and commands for group2 tests
-        #mkdir /RF/results
-        #mkdir /RF/results/<TestNameGroup2>
-        #robot -d results/<TestNameGroup2> --timestampoutput /RF/robots/<TestNameGroup2>.robot
+        # TOCHECK 2: Adjust the paths and commands for group2 tests
+        mkdir /RF/results
+        mkdir /RF/results/<TestNameGroup2>
+        robot -d results/<TestNameGroup2> --timestampoutput /RF/AutomationDemo/tests/test_suites/sample_test_suite_2.robot
         ;;
     *)
         echo "Unknown group: $GROUP. Skipping tests."
