@@ -43,7 +43,7 @@ jobs:
       - name: Set script permission (run.sh)
         run: chmod +x ./QA/run.sh
       - name: Start Android emulator and run Robot Framework tests on it
-        run: ./QA/${{ matrix.script }} ${{ matrix.params }} # Use matrix values here
+        run: ./QA/${{ matrix.script }} ${{ matrix.params }}
       - name: Archive test results
         uses: actions/upload-artifact@v3
         with:
