@@ -91,8 +91,8 @@ case $GROUP in
     group2)
         # TOCHECK 2: Adjust the paths and commands for group2 tests
         mkdir /RF/results
-        mkdir /RF/results/sample_test_suite_1
-        robot -d results/sample_test_suite_1 --timestampoutput /RF/AutomationDemo/tests/test_suites/sample_test_suite_2.robot
+        mkdir /RF/results/SmokeTests
+        robot -d results/SmokeTests --timestampoutput /RF/AutomationDemo/tests/test_suites/SmokeTests.robot
         ;;
     *)
         echo "Unknown group: $GROUP. Skipping tests."
