@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.7.9 on win32)" generated="20231007 20:04:34.604" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Suites" source="C:\Work\TestItDemo\AutomationDemo\tests\test_suites">
+<suite id="s1-s1" name="Sample Test Suite 2" source="C:\Work\TestItDemo\AutomationDemo\tests\test_suites\sample_test_suite_2.robot">
+<kw name="Suite Setup" library="SetupTeardown" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>Suite setup</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:04:35.180" level="INFO">Suite setup</msg>
+<status status="PASS" starttime="20231007 20:04:35.179" endtime="20231007 20:04:35.183"/>
+</kw>
+<kw name="Run Process" library="Process">
+<arg>taskkill</arg>
+<arg>/F</arg>
+<arg>/IM</arg>
+<arg>node.exe</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20231007 20:04:35.184" level="INFO">Starting process:
+taskkill /F /IM node.exe</msg>
+<msg timestamp="20231007 20:04:35.205" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231007 20:04:35.366" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20231007 20:04:35.184" endtime="20231007 20:04:35.367"/>
+</kw>
+<kw name="Start Process" library="Process">
+<arg>appium</arg>
+<arg>-a</arg>
+<arg>${APPIUM_SERVER_HOST}</arg>
+<arg>-p</arg>
+<arg>${APPIUM_SERVER_PORT}</arg>
+<arg>shell=True</arg>
+<arg>alias=appiumserver</arg>
+<arg>stdout=C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General/appium_stdout.txt</arg>
+<arg>stderr=C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General/appium_stderr.txt</arg>
+<doc>Starts a new process on background.</doc>
+<msg timestamp="20231007 20:04:35.369" level="INFO">Starting process:
+appium -a 127.0.0.1 -p 4723</msg>
+<status status="PASS" starttime="20231007 20:04:35.367" endtime="20231007 20:04:35.374"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:35.179" endtime="20231007 20:04:35.375"/>
+</kw>
+<test id="s1-s1-t1" name="Verify App Launch2" line="9">
+<kw name="Test Setup" library="SetupTeardown" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:04:35.377" level="INFO">C:\Work\TestItDemo\AutomationDemo\resources\Keywords\General</msg>
+<status status="PASS" starttime="20231007 20:04:35.377" endtime="20231007 20:04:35.377"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>noReset=true</arg>
+<arg>newCommandTimeout=${COMMAND_TIMEOUT}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20231007 20:04:36.397" level="INFO">Could not connect to port 4723 on host 127.0.0.1</msg>
+<msg timestamp="20231007 20:04:36.397" level="INFO">Could not get IP address for host: 127.0.0.1</msg>
+<msg timestamp="20231007 20:04:38.431" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000177D126BC08&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session</msg>
+<status status="PASS" starttime="20231007 20:04:35.378" endtime="20231007 20:04:53.248"/>
+</kw>
+<kw name="Verify App Started" library="MainMenu">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20231007 20:04:53.249" endtime="20231007 20:04:53.669"/>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231007 20:04:53.719" level="INFO">Current page contains element 'accessibility_id=Animation'.</msg>
+<status status="PASS" starttime="20231007 20:04:53.670" endtime="20231007 20:04:53.719"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:04:54.419" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:04:53.720" endtime="20231007 20:04:54.420"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:53.248" endtime="20231007 20:04:54.420"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:35.376" endtime="20231007 20:04:54.421"/>
+</kw>
+<kw name="Click Animation Button" library="MainMenu">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231007 20:04:54.427" level="INFO">Clicking element 'accessibility_id=Animation'.</msg>
+<status status="PASS" starttime="20231007 20:04:54.422" endtime="20231007 20:04:56.191"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:54.421" endtime="20231007 20:04:56.193"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:04:56.602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:04:56.194" endtime="20231007 20:04:56.602"/>
+</kw>
+<kw name="Test Teardown" library="SetupTeardown" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Test teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:04:56.604" level="INFO">Test teardown</msg>
+<status status="PASS" starttime="20231007 20:04:56.604" endtime="20231007 20:04:56.604"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:04:56.949" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:04:56.605" endtime="20231007 20:04:56.950"/>
+</kw>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<msg timestamp="20231007 20:04:57.100" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2148"&gt;
+  &lt;android.widget.FrameLayout index="0" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+    &lt;android.view.ViewGroup index="0" package="io.appium.android.apis" class="android.view.ViewGroup" text="" resource-id="android:id/decor_content_parent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" resource-id="android:id/action_bar_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,83][1080,237]" displayed="true"&gt;
+        &lt;android.view.ViewGroup index="0" package="io.appium.android.apis" class="android.view.ViewGroup" text="" resource-id="android:id/action_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,83][1080,237]" displayed="true"&gt;
+          &lt;android.widget.TextView index="0" package="io.appium.android.apis" class="android.widget.TextView" text="API Demos" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,123][317,197]" displayed="true" /&gt;
+        &lt;/android.view.ViewGroup&gt;
+      &lt;/android.widget.FrameLayout&gt;
+      &lt;android.widget.FrameLayout index="1" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,2148]" displayed="true"&gt;
+        &lt;android.widget.ListView index="0" package="io.appium.android.apis" class="android.widget.ListView" text="" resource-id="android:id/list" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,2148]" displayed="true"&gt;
+          &lt;android.widget.TextView index="0" package="io.appium.android.apis" class="android.widget.TextView" text="Bouncing Balls" content-desc="Bouncing Balls" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,369]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="1" package="io.appium.android.apis" class="android.widget.TextView" text="Cloning" content-desc="Cloning" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,372][1080,504]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="2" package="io.appium.android.apis" class="android.widget.TextView" text="Custom Evaluator" content-desc="Custom Evaluator" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,507][1080,639]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="3" package="io.appium.android.apis" class="android.widget.TextView" text="Default Layout Animations" content-desc="Default Layout Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,642][1080,774]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="4" package="io.appium.android.apis" class="android.widget.TextView" text="Events" content-desc="Events" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,777][1080,909]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="5" package="io.appium.android.apis" class="android.widget.TextView" text="Hide-Show Animations" content-desc="Hide-Show Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,912][1080,1044]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="6" package="io.appium.android.apis" class="android.widget.TextView" text="Layout Animations" content-desc="Layout Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1047][1080,1179]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="7" package="io.appium.android.apis" class="android.widget.TextView" text="Loading" content-desc="Loading" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1182][1080,1314]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="8" package="io.appium.android.apis" class="android.widget.TextView" text="Multiple Properties" content-desc="Multiple Properties" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1317][1080,1449]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="9" package="io.appium.android.apis" class="android.widget.TextView" text="Reversing" content-desc="Reversing" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1452][1080,1584]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="10" package="io.appium.android.apis" class="android.widget.TextView" text="Seeking" content-desc="Seeking" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1587][1080,1719]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="11" package="io.appium.android.apis" class="android.widget.TextView" text="View Flip" content-desc="View Flip" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1722][1080,1854]" displayed="true" /&gt;
+        &lt;/android.widget.ListView&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.view.ViewGroup&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<status status="PASS" starttime="20231007 20:04:56.950" endtime="20231007 20:04:57.101"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231007 20:04:57.101" endtime="20231007 20:04:57.436"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:56.603" endtime="20231007 20:04:57.436"/>
+</kw>
+<doc>Verifies that the app launches successfully.</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20231007 20:04:35.375" endtime="20231007 20:04:57.436"/>
+</test>
+<kw name="Suite Teardown" library="SetupTeardown" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Suite teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:04:57.440" level="INFO">Suite teardown</msg>
+<status status="PASS" starttime="20231007 20:04:57.440" endtime="20231007 20:04:57.441"/>
+</kw>
+<kw name="Run Process" library="Process">
+<arg>taskkill</arg>
+<arg>/F</arg>
+<arg>/IM</arg>
+<arg>node.exe</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20231007 20:04:57.442" level="INFO">Starting process:
+taskkill /F /IM node.exe</msg>
+<msg timestamp="20231007 20:04:57.448" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231007 20:04:57.583" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20231007 20:04:57.441" endtime="20231007 20:04:57.583"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:57.438" endtime="20231007 20:04:57.584"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:34.632" endtime="20231007 20:04:57.584"/>
+</suite>
+<suite id="s1-s2" name="Sample Test Suite 3" source="C:\Work\TestItDemo\AutomationDemo\tests\test_suites\sample_test_suite_3.robot">
+<kw name="Suite Setup" library="SetupTeardown" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>Suite setup</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:04:57.601" level="INFO">Suite setup</msg>
+<status status="PASS" starttime="20231007 20:04:57.601" endtime="20231007 20:04:57.601"/>
+</kw>
+<kw name="Run Process" library="Process">
+<arg>taskkill</arg>
+<arg>/F</arg>
+<arg>/IM</arg>
+<arg>node.exe</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20231007 20:04:57.601" level="INFO">Starting process:
+taskkill /F /IM node.exe</msg>
+<msg timestamp="20231007 20:04:57.608" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231007 20:04:57.750" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20231007 20:04:57.601" endtime="20231007 20:04:57.750"/>
+</kw>
+<kw name="Start Process" library="Process">
+<arg>appium</arg>
+<arg>-a</arg>
+<arg>${APPIUM_SERVER_HOST}</arg>
+<arg>-p</arg>
+<arg>${APPIUM_SERVER_PORT}</arg>
+<arg>shell=True</arg>
+<arg>alias=appiumserver</arg>
+<arg>stdout=C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General/appium_stdout.txt</arg>
+<arg>stderr=C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General/appium_stderr.txt</arg>
+<doc>Starts a new process on background.</doc>
+<msg timestamp="20231007 20:04:57.753" level="INFO">Starting process:
+appium -a 127.0.0.1 -p 4723</msg>
+<status status="PASS" starttime="20231007 20:04:57.750" endtime="20231007 20:04:57.760"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:57.600" endtime="20231007 20:04:57.760"/>
+</kw>
+<test id="s1-s2-t1" name="Verify App Launch3" line="9">
+<kw name="Test Setup" library="SetupTeardown" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:04:57.763" level="INFO">C:\Work\TestItDemo\AutomationDemo\resources\Keywords\General</msg>
+<status status="PASS" starttime="20231007 20:04:57.763" endtime="20231007 20:04:57.763"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>noReset=true</arg>
+<arg>newCommandTimeout=${COMMAND_TIMEOUT}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20231007 20:04:58.768" level="INFO">Could not connect to port 4723 on host 127.0.0.1</msg>
+<msg timestamp="20231007 20:04:58.768" level="INFO">Could not get IP address for host: 127.0.0.1</msg>
+<status status="PASS" starttime="20231007 20:04:57.763" endtime="20231007 20:05:06.806"/>
+</kw>
+<kw name="Verify App Started" library="MainMenu">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20231007 20:05:06.807" endtime="20231007 20:05:07.249"/>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231007 20:05:07.303" level="INFO">Current page contains element 'accessibility_id=Animation'.</msg>
+<status status="PASS" starttime="20231007 20:05:07.250" endtime="20231007 20:05:07.303"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:07.528" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:07.303" endtime="20231007 20:05:07.528"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:06.806" endtime="20231007 20:05:07.528"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:57.761" endtime="20231007 20:05:07.529"/>
+</kw>
+<kw name="Click Animation Button" library="MainMenu">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231007 20:05:07.531" level="INFO">Clicking element 'accessibility_id=Animation'.</msg>
+<status status="PASS" starttime="20231007 20:05:07.529" endtime="20231007 20:05:08.428"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:07.529" endtime="20231007 20:05:08.428"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:08.639" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:08.428" endtime="20231007 20:05:08.639"/>
+</kw>
+<kw name="Test Teardown" library="SetupTeardown" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Test teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:08.640" level="INFO">Test teardown</msg>
+<status status="PASS" starttime="20231007 20:05:08.640" endtime="20231007 20:05:08.640"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:08.853" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:08.641" endtime="20231007 20:05:08.854"/>
+</kw>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<msg timestamp="20231007 20:05:08.914" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2148"&gt;
+  &lt;android.widget.FrameLayout index="0" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+    &lt;android.view.ViewGroup index="0" package="io.appium.android.apis" class="android.view.ViewGroup" text="" resource-id="android:id/decor_content_parent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" resource-id="android:id/action_bar_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,83][1080,237]" displayed="true"&gt;
+        &lt;android.view.ViewGroup index="0" package="io.appium.android.apis" class="android.view.ViewGroup" text="" resource-id="android:id/action_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,83][1080,237]" displayed="true"&gt;
+          &lt;android.widget.TextView index="0" package="io.appium.android.apis" class="android.widget.TextView" text="API Demos" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,123][317,197]" displayed="true" /&gt;
+        &lt;/android.view.ViewGroup&gt;
+      &lt;/android.widget.FrameLayout&gt;
+      &lt;android.widget.FrameLayout index="1" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,2148]" displayed="true"&gt;
+        &lt;android.widget.ListView index="0" package="io.appium.android.apis" class="android.widget.ListView" text="" resource-id="android:id/list" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,2148]" displayed="true"&gt;
+          &lt;android.widget.TextView index="0" package="io.appium.android.apis" class="android.widget.TextView" text="Bouncing Balls" content-desc="Bouncing Balls" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,369]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="1" package="io.appium.android.apis" class="android.widget.TextView" text="Cloning" content-desc="Cloning" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,372][1080,504]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="2" package="io.appium.android.apis" class="android.widget.TextView" text="Custom Evaluator" content-desc="Custom Evaluator" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,507][1080,639]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="3" package="io.appium.android.apis" class="android.widget.TextView" text="Default Layout Animations" content-desc="Default Layout Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,642][1080,774]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="4" package="io.appium.android.apis" class="android.widget.TextView" text="Events" content-desc="Events" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,777][1080,909]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="5" package="io.appium.android.apis" class="android.widget.TextView" text="Hide-Show Animations" content-desc="Hide-Show Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,912][1080,1044]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="6" package="io.appium.android.apis" class="android.widget.TextView" text="Layout Animations" content-desc="Layout Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1047][1080,1179]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="7" package="io.appium.android.apis" class="android.widget.TextView" text="Loading" content-desc="Loading" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1182][1080,1314]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="8" package="io.appium.android.apis" class="android.widget.TextView" text="Multiple Properties" content-desc="Multiple Properties" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1317][1080,1449]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="9" package="io.appium.android.apis" class="android.widget.TextView" text="Reversing" content-desc="Reversing" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1452][1080,1584]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="10" package="io.appium.android.apis" class="android.widget.TextView" text="Seeking" content-desc="Seeking" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1587][1080,1719]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="11" package="io.appium.android.apis" class="android.widget.TextView" text="View Flip" content-desc="View Flip" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1722][1080,1854]" displayed="true" /&gt;
+        &lt;/android.widget.ListView&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.view.ViewGroup&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:08.854" endtime="20231007 20:05:08.915"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231007 20:05:08.915" endtime="20231007 20:05:09.259"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:08.640" endtime="20231007 20:05:09.259"/>
+</kw>
+<doc>Verifies that the app launches successfully.</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20231007 20:04:57.761" endtime="20231007 20:05:09.259"/>
+</test>
+<kw name="Suite Teardown" library="SetupTeardown" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Suite teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:09.261" level="INFO">Suite teardown</msg>
+<status status="PASS" starttime="20231007 20:05:09.261" endtime="20231007 20:05:09.261"/>
+</kw>
+<kw name="Run Process" library="Process">
+<arg>taskkill</arg>
+<arg>/F</arg>
+<arg>/IM</arg>
+<arg>node.exe</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20231007 20:05:09.262" level="INFO">Starting process:
+taskkill /F /IM node.exe</msg>
+<msg timestamp="20231007 20:05:09.268" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231007 20:05:09.439" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20231007 20:05:09.261" endtime="20231007 20:05:09.439"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:09.260" endtime="20231007 20:05:09.440"/>
+</kw>
+<status status="PASS" starttime="20231007 20:04:57.585" endtime="20231007 20:05:09.440"/>
+</suite>
+<suite id="s1-s3" name="SmokeTests" source="C:\Work\TestItDemo\AutomationDemo\tests\test_suites\SmokeTests.robot">
+<kw name="Suite Setup" library="SetupTeardown" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>Suite setup</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:09.456" level="INFO">Suite setup</msg>
+<status status="PASS" starttime="20231007 20:05:09.455" endtime="20231007 20:05:09.456"/>
+</kw>
+<kw name="Run Process" library="Process">
+<arg>taskkill</arg>
+<arg>/F</arg>
+<arg>/IM</arg>
+<arg>node.exe</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20231007 20:05:09.456" level="INFO">Starting process:
+taskkill /F /IM node.exe</msg>
+<msg timestamp="20231007 20:05:09.461" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231007 20:05:09.630" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20231007 20:05:09.456" endtime="20231007 20:05:09.630"/>
+</kw>
+<kw name="Start Process" library="Process">
+<arg>appium</arg>
+<arg>-a</arg>
+<arg>${APPIUM_SERVER_HOST}</arg>
+<arg>-p</arg>
+<arg>${APPIUM_SERVER_PORT}</arg>
+<arg>shell=True</arg>
+<arg>alias=appiumserver</arg>
+<arg>stdout=C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General/appium_stdout.txt</arg>
+<arg>stderr=C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General/appium_stderr.txt</arg>
+<doc>Starts a new process on background.</doc>
+<msg timestamp="20231007 20:05:09.632" level="INFO">Starting process:
+appium -a 127.0.0.1 -p 4723</msg>
+<status status="PASS" starttime="20231007 20:05:09.630" endtime="20231007 20:05:09.637"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:09.455" endtime="20231007 20:05:09.638"/>
+</kw>
+<test id="s1-s3-t1" name="Verify Main Menu" line="10">
+<kw name="Test Setup" library="SetupTeardown" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:09.639" level="INFO">C:\Work\TestItDemo\AutomationDemo\resources\Keywords\General</msg>
+<status status="PASS" starttime="20231007 20:05:09.639" endtime="20231007 20:05:09.640"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>noReset=true</arg>
+<arg>newCommandTimeout=${COMMAND_TIMEOUT}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20231007 20:05:10.643" level="INFO">Could not connect to port 4723 on host 127.0.0.1</msg>
+<msg timestamp="20231007 20:05:10.643" level="INFO">Could not get IP address for host: 127.0.0.1</msg>
+<status status="PASS" starttime="20231007 20:05:09.640" endtime="20231007 20:05:19.256"/>
+</kw>
+<kw name="Verify App Started" library="MainMenu">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20231007 20:05:19.258" endtime="20231007 20:05:19.676"/>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231007 20:05:19.734" level="INFO">Current page contains element 'accessibility_id=Animation'.</msg>
+<status status="PASS" starttime="20231007 20:05:19.677" endtime="20231007 20:05:19.734"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:20.070" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:19.734" endtime="20231007 20:05:20.071"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:19.257" endtime="20231007 20:05:20.071"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:09.639" endtime="20231007 20:05:20.071"/>
+</kw>
+<kw name="Check Elements In Main Menu" library="MainMenu">
+<kw name="Check Elements In Menu" library="GeneralKeywords">
+<arg>${MAIN_MENU}</arg>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{items}</value>
+<iter>
+<var name="${item}">ACCESSIBILITY_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.074" level="INFO">${locator} = accessibility_id=Accessibility</msg>
+<status status="PASS" starttime="20231007 20:05:20.074" endtime="20231007 20:05:20.075"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.075" endtime="20231007 20:05:20.135"/>
+</kw>
+<msg timestamp="20231007 20:05:20.135" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.075" endtime="20231007 20:05:20.135"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.137" level="INFO">Menu item 'ACCESSIBILITY_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.136" endtime="20231007 20:05:20.137"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.135" endtime="20231007 20:05:20.137"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.074" endtime="20231007 20:05:20.137"/>
+</iter>
+<iter>
+<var name="${item}">ANIMATION_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.138" level="INFO">${locator} = accessibility_id=Animation</msg>
+<status status="PASS" starttime="20231007 20:05:20.137" endtime="20231007 20:05:20.138"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.138" endtime="20231007 20:05:20.204"/>
+</kw>
+<msg timestamp="20231007 20:05:20.205" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.138" endtime="20231007 20:05:20.205"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.206" level="INFO">Menu item 'ANIMATION_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.205" endtime="20231007 20:05:20.206"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.205" endtime="20231007 20:05:20.206"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.137" endtime="20231007 20:05:20.206"/>
+</iter>
+<iter>
+<var name="${item}">APP_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.207" level="INFO">${locator} = accessibility_id=App</msg>
+<status status="PASS" starttime="20231007 20:05:20.207" endtime="20231007 20:05:20.207"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.208" endtime="20231007 20:05:20.274"/>
+</kw>
+<msg timestamp="20231007 20:05:20.275" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.207" endtime="20231007 20:05:20.275"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.276" level="INFO">Menu item 'APP_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.276" endtime="20231007 20:05:20.276"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.275" endtime="20231007 20:05:20.276"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.206" endtime="20231007 20:05:20.276"/>
+</iter>
+<iter>
+<var name="${item}">CONTENT_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.277" level="INFO">${locator} = accessibility_id=Content</msg>
+<status status="PASS" starttime="20231007 20:05:20.277" endtime="20231007 20:05:20.277"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.278" endtime="20231007 20:05:20.332"/>
+</kw>
+<msg timestamp="20231007 20:05:20.332" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.277" endtime="20231007 20:05:20.332"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.334" level="INFO">Menu item 'CONTENT_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.333" endtime="20231007 20:05:20.334"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.333" endtime="20231007 20:05:20.334"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.276" endtime="20231007 20:05:20.334"/>
+</iter>
+<iter>
+<var name="${item}">GRAPHICS_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.335" level="INFO">${locator} = accessibility_id=Graphics</msg>
+<status status="PASS" starttime="20231007 20:05:20.335" endtime="20231007 20:05:20.335"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.336" endtime="20231007 20:05:20.411"/>
+</kw>
+<msg timestamp="20231007 20:05:20.413" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.336" endtime="20231007 20:05:20.413"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.414" level="INFO">Menu item 'GRAPHICS_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.414" endtime="20231007 20:05:20.414"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.413" endtime="20231007 20:05:20.415"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.334" endtime="20231007 20:05:20.415"/>
+</iter>
+<iter>
+<var name="${item}">MEDIA_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.415" level="INFO">${locator} = accessibility_id=Media</msg>
+<status status="PASS" starttime="20231007 20:05:20.415" endtime="20231007 20:05:20.416"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.416" endtime="20231007 20:05:20.613"/>
+</kw>
+<msg timestamp="20231007 20:05:20.613" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.416" endtime="20231007 20:05:20.614"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.614" level="INFO">Menu item 'MEDIA_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.614" endtime="20231007 20:05:20.614"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.614" endtime="20231007 20:05:20.616"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.415" endtime="20231007 20:05:20.616"/>
+</iter>
+<iter>
+<var name="${item}">NFC_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.617" level="INFO">${locator} = accessibility_id=NFC</msg>
+<status status="PASS" starttime="20231007 20:05:20.616" endtime="20231007 20:05:20.617"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.617" endtime="20231007 20:05:20.677"/>
+</kw>
+<msg timestamp="20231007 20:05:20.677" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.617" endtime="20231007 20:05:20.677"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.678" level="INFO">Menu item 'NFC_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.678" endtime="20231007 20:05:20.678"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.677" endtime="20231007 20:05:20.678"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.616" endtime="20231007 20:05:20.678"/>
+</iter>
+<iter>
+<var name="${item}">OS_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.679" level="INFO">${locator} = accessibility_id=OS</msg>
+<status status="PASS" starttime="20231007 20:05:20.679" endtime="20231007 20:05:20.679"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.680" endtime="20231007 20:05:20.734"/>
+</kw>
+<msg timestamp="20231007 20:05:20.735" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.680" endtime="20231007 20:05:20.735"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.736" level="INFO">Menu item 'OS_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.736" endtime="20231007 20:05:20.736"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.735" endtime="20231007 20:05:20.736"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.679" endtime="20231007 20:05:20.736"/>
+</iter>
+<iter>
+<var name="${item}">PREFERENCE_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.737" level="INFO">${locator} = accessibility_id=Preference</msg>
+<status status="PASS" starttime="20231007 20:05:20.737" endtime="20231007 20:05:20.737"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.738" endtime="20231007 20:05:20.783"/>
+</kw>
+<msg timestamp="20231007 20:05:20.783" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.737" endtime="20231007 20:05:20.783"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.784" level="INFO">Menu item 'PREFERENCE_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.784" endtime="20231007 20:05:20.784"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.783" endtime="20231007 20:05:20.784"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.736" endtime="20231007 20:05:20.785"/>
+</iter>
+<iter>
+<var name="${item}">TEXT_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.785" level="INFO">${locator} = accessibility_id=Text</msg>
+<status status="PASS" starttime="20231007 20:05:20.785" endtime="20231007 20:05:20.785"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.786" endtime="20231007 20:05:20.841"/>
+</kw>
+<msg timestamp="20231007 20:05:20.841" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.786" endtime="20231007 20:05:20.841"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.842" level="INFO">Menu item 'TEXT_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.842" endtime="20231007 20:05:20.842"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.841" endtime="20231007 20:05:20.842"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.785" endtime="20231007 20:05:20.842"/>
+</iter>
+<iter>
+<var name="${item}">VIEWS_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.843" level="INFO">${locator} = accessibility_id=Views</msg>
+<status status="PASS" starttime="20231007 20:05:20.843" endtime="20231007 20:05:20.843"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.843" endtime="20231007 20:05:20.908"/>
+</kw>
+<msg timestamp="20231007 20:05:20.909" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.843" endtime="20231007 20:05:20.909"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.910" level="INFO">Menu item 'VIEWS_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.909" endtime="20231007 20:05:20.910"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.909" endtime="20231007 20:05:20.910"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.843" endtime="20231007 20:05:20.910"/>
+</iter>
+<iter>
+<var name="${item}">TITLE</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:20.911" level="INFO">${locator} = id=android:id/action_bar</msg>
+<status status="PASS" starttime="20231007 20:05:20.911" endtime="20231007 20:05:20.911"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:20.911" endtime="20231007 20:05:20.969"/>
+</kw>
+<msg timestamp="20231007 20:05:20.970" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:20.911" endtime="20231007 20:05:20.970"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:20.971" level="INFO">Menu item 'TITLE' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:20.970" endtime="20231007 20:05:20.971"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.970" endtime="20231007 20:05:20.971"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.910" endtime="20231007 20:05:20.971"/>
+</iter>
+<status status="PASS" starttime="20231007 20:05:20.073" endtime="20231007 20:05:20.971"/>
+</for>
+<status status="PASS" starttime="20231007 20:05:20.073" endtime="20231007 20:05:20.971"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:20.071" endtime="20231007 20:05:20.971"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:21.295" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:20.973" endtime="20231007 20:05:21.295"/>
+</kw>
+<kw name="Test Teardown" library="SetupTeardown" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Test teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:21.297" level="INFO">Test teardown</msg>
+<status status="PASS" starttime="20231007 20:05:21.297" endtime="20231007 20:05:21.297"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:21.536" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:21.297" endtime="20231007 20:05:21.536"/>
+</kw>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<msg timestamp="20231007 20:05:21.594" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2148"&gt;
+  &lt;android.widget.FrameLayout index="0" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+    &lt;android.view.ViewGroup index="0" package="io.appium.android.apis" class="android.view.ViewGroup" text="" resource-id="android:id/decor_content_parent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" resource-id="android:id/action_bar_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,83][1080,237]" displayed="true"&gt;
+        &lt;android.view.ViewGroup index="0" package="io.appium.android.apis" class="android.view.ViewGroup" text="" resource-id="android:id/action_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,83][1080,237]" displayed="true"&gt;
+          &lt;android.widget.TextView index="0" package="io.appium.android.apis" class="android.widget.TextView" text="API Demos" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,123][317,197]" displayed="true" /&gt;
+        &lt;/android.view.ViewGroup&gt;
+      &lt;/android.widget.FrameLayout&gt;
+      &lt;android.widget.FrameLayout index="1" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,2148]" displayed="true"&gt;
+        &lt;android.widget.ListView index="0" package="io.appium.android.apis" class="android.widget.ListView" text="" resource-id="android:id/list" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="true" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,2148]" displayed="true"&gt;
+          &lt;android.widget.TextView index="0" package="io.appium.android.apis" class="android.widget.TextView" text="Access'ibility" content-desc="Access'ibility" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,369]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="1" package="io.appium.android.apis" class="android.widget.TextView" text="Accessibility" content-desc="Accessibility" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,372][1080,504]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="2" package="io.appium.android.apis" class="android.widget.TextView" text="Animation" content-desc="Animation" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,507][1080,639]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="3" package="io.appium.android.apis" class="android.widget.TextView" text="App" content-desc="App" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,642][1080,774]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="4" package="io.appium.android.apis" class="android.widget.TextView" text="Content" content-desc="Content" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,777][1080,909]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="5" package="io.appium.android.apis" class="android.widget.TextView" text="Graphics" content-desc="Graphics" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,912][1080,1044]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="6" package="io.appium.android.apis" class="android.widget.TextView" text="Media" content-desc="Media" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1047][1080,1179]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="7" package="io.appium.android.apis" class="android.widget.TextView" text="NFC" content-desc="NFC" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1182][1080,1314]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="8" package="io.appium.android.apis" class="android.widget.TextView" text="OS" content-desc="OS" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1317][1080,1449]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="9" package="io.appium.android.apis" class="android.widget.TextView" text="Preference" content-desc="Preference" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1452][1080,1584]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="10" package="io.appium.android.apis" class="android.widget.TextView" text="Text" content-desc="Text" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1587][1080,1719]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="11" package="io.appium.android.apis" class="android.widget.TextView" text="Views" content-desc="Views" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1722][1080,1854]" displayed="true" /&gt;
+        &lt;/android.widget.ListView&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.view.ViewGroup&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:21.537" endtime="20231007 20:05:21.595"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231007 20:05:21.595" endtime="20231007 20:05:21.968"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:21.296" endtime="20231007 20:05:21.969"/>
+</kw>
+<doc>Verifies main menu contains all of the desired items</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20231007 20:05:09.638" endtime="20231007 20:05:21.969"/>
+</test>
+<test id="s1-s3-t2" name="Verify Animation Menu" line="18">
+<kw name="Test Setup" library="SetupTeardown" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>C:\\Work\\TestItDemo\\AutomationDemo\\resources\\Keywords\\General</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:21.974" level="INFO">C:\Work\TestItDemo\AutomationDemo\resources\Keywords\General</msg>
+<status status="PASS" starttime="20231007 20:05:21.973" endtime="20231007 20:05:21.974"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>noReset=true</arg>
+<arg>newCommandTimeout=${COMMAND_TIMEOUT}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20231007 20:05:21.974" endtime="20231007 20:05:27.314"/>
+</kw>
+<kw name="Verify App Started" library="MainMenu">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20231007 20:05:27.316" endtime="20231007 20:05:27.787"/>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231007 20:05:27.833" level="INFO">Current page contains element 'accessibility_id=Animation'.</msg>
+<status status="PASS" starttime="20231007 20:05:27.787" endtime="20231007 20:05:27.833"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:28.038" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:27.833" endtime="20231007 20:05:28.038"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:27.315" endtime="20231007 20:05:28.039"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:21.971" endtime="20231007 20:05:28.039"/>
+</kw>
+<kw name="Click Animation Button" library="MainMenu">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${MAIN_MENU['ANIMATION_BUTTON']}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231007 20:05:28.041" level="INFO">Clicking element 'accessibility_id=Animation'.</msg>
+<status status="PASS" starttime="20231007 20:05:28.039" endtime="20231007 20:05:28.940"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:28.039" endtime="20231007 20:05:28.940"/>
+</kw>
+<kw name="Check Elements In Animation Menu" library="AnimationMenu">
+<kw name="Check Elements In Menu" library="GeneralKeywords">
+<arg>${ANIMATION_SUBMENU}</arg>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{items}</value>
+<iter>
+<var name="${item}">BOUNCING_BALLS_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:28.942" level="INFO">${locator} = accessibility_id=Bouncing Balls</msg>
+<status status="PASS" starttime="20231007 20:05:28.942" endtime="20231007 20:05:28.942"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:28.943" endtime="20231007 20:05:29.000"/>
+</kw>
+<msg timestamp="20231007 20:05:29.000" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:28.942" endtime="20231007 20:05:29.000"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.002" level="INFO">Menu item 'BOUNCING_BALLS_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.001" endtime="20231007 20:05:29.002"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.000" endtime="20231007 20:05:29.002"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:28.941" endtime="20231007 20:05:29.002"/>
+</iter>
+<iter>
+<var name="${item}">CLONING_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.003" level="INFO">${locator} = accessibility_id=Cloning</msg>
+<status status="PASS" starttime="20231007 20:05:29.003" endtime="20231007 20:05:29.003"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.004" endtime="20231007 20:05:29.060"/>
+</kw>
+<msg timestamp="20231007 20:05:29.060" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.003" endtime="20231007 20:05:29.061"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.062" level="INFO">Menu item 'CLONING_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.061" endtime="20231007 20:05:29.062"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.061" endtime="20231007 20:05:29.062"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.002" endtime="20231007 20:05:29.062"/>
+</iter>
+<iter>
+<var name="${item}">CUSTOM_EVALUATOR_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.064" level="INFO">${locator} = accessibility_id=Custom Evaluator</msg>
+<status status="PASS" starttime="20231007 20:05:29.063" endtime="20231007 20:05:29.064"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.064" endtime="20231007 20:05:29.116"/>
+</kw>
+<msg timestamp="20231007 20:05:29.116" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.064" endtime="20231007 20:05:29.116"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.117" level="INFO">Menu item 'CUSTOM_EVALUATOR_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.117" endtime="20231007 20:05:29.118"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.117" endtime="20231007 20:05:29.118"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.063" endtime="20231007 20:05:29.118"/>
+</iter>
+<iter>
+<var name="${item}">DEFAULT_LAYOUT_ANIMATIONS_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.118" level="INFO">${locator} = accessibility_id=Default Layout Animations</msg>
+<status status="PASS" starttime="20231007 20:05:29.118" endtime="20231007 20:05:29.119"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.119" endtime="20231007 20:05:29.165"/>
+</kw>
+<msg timestamp="20231007 20:05:29.165" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.119" endtime="20231007 20:05:29.165"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.167" level="INFO">Menu item 'DEFAULT_LAYOUT_ANIMATIONS_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.166" endtime="20231007 20:05:29.167"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.166" endtime="20231007 20:05:29.167"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.118" endtime="20231007 20:05:29.167"/>
+</iter>
+<iter>
+<var name="${item}">EVENTS_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.168" level="INFO">${locator} = accessibility_id=Events</msg>
+<status status="PASS" starttime="20231007 20:05:29.167" endtime="20231007 20:05:29.168"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.168" endtime="20231007 20:05:29.233"/>
+</kw>
+<msg timestamp="20231007 20:05:29.233" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.168" endtime="20231007 20:05:29.233"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.234" level="INFO">Menu item 'EVENTS_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.234" endtime="20231007 20:05:29.234"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.233" endtime="20231007 20:05:29.234"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.167" endtime="20231007 20:05:29.235"/>
+</iter>
+<iter>
+<var name="${item}">HIDE_SHOW_ANIMATIONS_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.235" level="INFO">${locator} = accessibility_id=Hide Show Animations</msg>
+<status status="PASS" starttime="20231007 20:05:29.235" endtime="20231007 20:05:29.235"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:29.553" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-11.png"&gt;&lt;img src="appium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:29.271" endtime="20231007 20:05:29.553"/>
+</kw>
+<msg timestamp="20231007 20:05:29.554" level="FAIL">ValueError: Element locator 'accessibility_id=Hide Show Animations' did not match any elements.</msg>
+<status status="FAIL" starttime="20231007 20:05:29.236" endtime="20231007 20:05:29.558"/>
+</kw>
+<msg timestamp="20231007 20:05:29.558" level="INFO">${is_visible} = None</msg>
+<status status="FAIL" starttime="20231007 20:05:29.236" endtime="20231007 20:05:29.558"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.560" level="INFO">Menu item 'HIDE_SHOW_ANIMATIONS_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.559" endtime="20231007 20:05:29.560"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.559" endtime="20231007 20:05:29.560"/>
+</kw>
+<status status="FAIL" starttime="20231007 20:05:29.235" endtime="20231007 20:05:29.560"/>
+</iter>
+<iter>
+<var name="${item}">LAYOUT_ANIMATIONS_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.561" level="INFO">${locator} = accessibility_id=Layout Animations</msg>
+<status status="PASS" starttime="20231007 20:05:29.561" endtime="20231007 20:05:29.561"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.562" endtime="20231007 20:05:29.606"/>
+</kw>
+<msg timestamp="20231007 20:05:29.606" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.562" endtime="20231007 20:05:29.606"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.607" level="INFO">Menu item 'LAYOUT_ANIMATIONS_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.607" endtime="20231007 20:05:29.607"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.606" endtime="20231007 20:05:29.607"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.560" endtime="20231007 20:05:29.607"/>
+</iter>
+<iter>
+<var name="${item}">LOADING_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.608" level="INFO">${locator} = accessibility_id=Loading</msg>
+<status status="PASS" starttime="20231007 20:05:29.608" endtime="20231007 20:05:29.608"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.609" endtime="20231007 20:05:29.657"/>
+</kw>
+<msg timestamp="20231007 20:05:29.657" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.609" endtime="20231007 20:05:29.657"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.658" level="INFO">Menu item 'LOADING_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.658" endtime="20231007 20:05:29.658"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.658" endtime="20231007 20:05:29.659"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.608" endtime="20231007 20:05:29.659"/>
+</iter>
+<iter>
+<var name="${item}">MULTIPLE_PROPERTIES_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.659" level="INFO">${locator} = accessibility_id=Multiple Properties</msg>
+<status status="PASS" starttime="20231007 20:05:29.659" endtime="20231007 20:05:29.659"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.660" endtime="20231007 20:05:29.709"/>
+</kw>
+<msg timestamp="20231007 20:05:29.709" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.660" endtime="20231007 20:05:29.709"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.710" level="INFO">Menu item 'MULTIPLE_PROPERTIES_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.710" endtime="20231007 20:05:29.710"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.709" endtime="20231007 20:05:29.710"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.659" endtime="20231007 20:05:29.710"/>
+</iter>
+<iter>
+<var name="${item}">REVERSING_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.711" level="INFO">${locator} = accessibility_id=Reversing</msg>
+<status status="PASS" starttime="20231007 20:05:29.711" endtime="20231007 20:05:29.711"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.711" endtime="20231007 20:05:29.758"/>
+</kw>
+<msg timestamp="20231007 20:05:29.758" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.711" endtime="20231007 20:05:29.758"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.760" level="INFO">Menu item 'REVERSING_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.759" endtime="20231007 20:05:29.760"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.759" endtime="20231007 20:05:29.760"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.711" endtime="20231007 20:05:29.760"/>
+</iter>
+<iter>
+<var name="${item}">SEEKING_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.761" level="INFO">${locator} = accessibility_id=Seeking</msg>
+<status status="PASS" starttime="20231007 20:05:29.761" endtime="20231007 20:05:29.761"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.762" endtime="20231007 20:05:29.811"/>
+</kw>
+<msg timestamp="20231007 20:05:29.811" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.761" endtime="20231007 20:05:29.811"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.814" level="INFO">Menu item 'SEEKING_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.814" endtime="20231007 20:05:29.814"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.813" endtime="20231007 20:05:29.814"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.760" endtime="20231007 20:05:29.815"/>
+</iter>
+<iter>
+<var name="${item}">VIEW_FLIP_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.816" level="INFO">${locator} = accessibility_id=View Flip</msg>
+<status status="PASS" starttime="20231007 20:05:29.815" endtime="20231007 20:05:29.816"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20231007 20:05:29.817" endtime="20231007 20:05:29.862"/>
+</kw>
+<msg timestamp="20231007 20:05:29.862" level="INFO">${is_visible} = None</msg>
+<status status="PASS" starttime="20231007 20:05:29.816" endtime="20231007 20:05:29.862"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:29.863" level="INFO">Menu item 'VIEW_FLIP_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:29.863" endtime="20231007 20:05:29.863"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.862" endtime="20231007 20:05:29.863"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:29.815" endtime="20231007 20:05:29.863"/>
+</iter>
+<iter>
+<var name="${item}">FAKE_BUTTON</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${locator}</var>
+<arg>${items}</arg>
+<arg>${item}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231007 20:05:29.864" level="INFO">${locator} = accessibility_id=Fake</msg>
+<status status="PASS" starttime="20231007 20:05:29.864" endtime="20231007 20:05:29.865"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:30.263" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-12.png"&gt;&lt;img src="appium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:29.891" endtime="20231007 20:05:30.263"/>
+</kw>
+<msg timestamp="20231007 20:05:30.264" level="FAIL">ValueError: Element locator 'accessibility_id=Fake' did not match any elements.</msg>
+<status status="FAIL" starttime="20231007 20:05:29.866" endtime="20231007 20:05:30.264"/>
+</kw>
+<msg timestamp="20231007 20:05:30.265" level="INFO">${is_visible} = None</msg>
+<status status="FAIL" starttime="20231007 20:05:29.865" endtime="20231007 20:05:30.265"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Menu item '${item}' is not visible.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:30.267" level="INFO">Menu item 'FAKE_BUTTON' is not visible.</msg>
+<status status="PASS" starttime="20231007 20:05:30.267" endtime="20231007 20:05:30.267"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:30.265" endtime="20231007 20:05:30.267"/>
+</kw>
+<status status="FAIL" starttime="20231007 20:05:29.864" endtime="20231007 20:05:30.267"/>
+</iter>
+<status status="FAIL" starttime="20231007 20:05:28.941" endtime="20231007 20:05:30.268"/>
+</for>
+<status status="FAIL" starttime="20231007 20:05:28.941" endtime="20231007 20:05:30.269"/>
+</kw>
+<status status="FAIL" starttime="20231007 20:05:28.940" endtime="20231007 20:05:30.270"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:30.546" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-13.png"&gt;&lt;img src="appium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:30.270" endtime="20231007 20:05:30.547"/>
+</kw>
+<kw name="Test Teardown" library="SetupTeardown" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Test teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:30.549" level="INFO">Test teardown</msg>
+<status status="PASS" starttime="20231007 20:05:30.548" endtime="20231007 20:05:30.549"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231007 20:05:30.851" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-14.png"&gt;&lt;img src="appium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:30.549" endtime="20231007 20:05:30.851"/>
+</kw>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<msg timestamp="20231007 20:05:30.923" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2148"&gt;
+  &lt;android.widget.FrameLayout index="0" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+    &lt;android.view.ViewGroup index="0" package="io.appium.android.apis" class="android.view.ViewGroup" text="" resource-id="android:id/decor_content_parent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2148]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" resource-id="android:id/action_bar_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,83][1080,237]" displayed="true"&gt;
+        &lt;android.view.ViewGroup index="0" package="io.appium.android.apis" class="android.view.ViewGroup" text="" resource-id="android:id/action_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,83][1080,237]" displayed="true"&gt;
+          &lt;android.widget.TextView index="0" package="io.appium.android.apis" class="android.widget.TextView" text="API Demos" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,123][317,197]" displayed="true" /&gt;
+        &lt;/android.view.ViewGroup&gt;
+      &lt;/android.widget.FrameLayout&gt;
+      &lt;android.widget.FrameLayout index="1" package="io.appium.android.apis" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,2148]" displayed="true"&gt;
+        &lt;android.widget.ListView index="0" package="io.appium.android.apis" class="android.widget.ListView" text="" resource-id="android:id/list" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,2148]" displayed="true"&gt;
+          &lt;android.widget.TextView index="0" package="io.appium.android.apis" class="android.widget.TextView" text="Bouncing Balls" content-desc="Bouncing Balls" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,237][1080,369]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="1" package="io.appium.android.apis" class="android.widget.TextView" text="Cloning" content-desc="Cloning" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,372][1080,504]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="2" package="io.appium.android.apis" class="android.widget.TextView" text="Custom Evaluator" content-desc="Custom Evaluator" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,507][1080,639]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="3" package="io.appium.android.apis" class="android.widget.TextView" text="Default Layout Animations" content-desc="Default Layout Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,642][1080,774]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="4" package="io.appium.android.apis" class="android.widget.TextView" text="Events" content-desc="Events" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,777][1080,909]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="5" package="io.appium.android.apis" class="android.widget.TextView" text="Hide-Show Animations" content-desc="Hide-Show Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,912][1080,1044]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="6" package="io.appium.android.apis" class="android.widget.TextView" text="Layout Animations" content-desc="Layout Animations" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1047][1080,1179]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="7" package="io.appium.android.apis" class="android.widget.TextView" text="Loading" content-desc="Loading" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1182][1080,1314]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="8" package="io.appium.android.apis" class="android.widget.TextView" text="Multiple Properties" content-desc="Multiple Properties" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1317][1080,1449]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="9" package="io.appium.android.apis" class="android.widget.TextView" text="Reversing" content-desc="Reversing" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1452][1080,1584]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="10" package="io.appium.android.apis" class="android.widget.TextView" text="Seeking" content-desc="Seeking" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1587][1080,1719]" displayed="true" /&gt;
+          &lt;android.widget.TextView index="11" package="io.appium.android.apis" class="android.widget.TextView" text="View Flip" content-desc="View Flip" resource-id="android:id/text1" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1722][1080,1854]" displayed="true" /&gt;
+        &lt;/android.widget.ListView&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.view.ViewGroup&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<status status="PASS" starttime="20231007 20:05:30.851" endtime="20231007 20:05:30.924"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20231007 20:05:30.924" endtime="20231007 20:05:31.270"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:30.548" endtime="20231007 20:05:31.270"/>
+</kw>
+<doc>Verifies Animation menu contains all of the desired items</doc>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20231007 20:05:21.970" endtime="20231007 20:05:31.271">Several failures occurred:
+
+1) ValueError: Element locator 'accessibility_id=Hide Show Animations' did not match any elements.
+
+2) ValueError: Element locator 'accessibility_id=Fake' did not match any elements.</status>
+</test>
+<kw name="Suite Teardown" library="SetupTeardown" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Suite teardown</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231007 20:05:31.273" level="INFO">Suite teardown</msg>
+<status status="PASS" starttime="20231007 20:05:31.273" endtime="20231007 20:05:31.273"/>
+</kw>
+<kw name="Run Process" library="Process">
+<arg>taskkill</arg>
+<arg>/F</arg>
+<arg>/IM</arg>
+<arg>node.exe</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20231007 20:05:31.274" level="INFO">Starting process:
+taskkill /F /IM node.exe</msg>
+<msg timestamp="20231007 20:05:31.281" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231007 20:05:31.463" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20231007 20:05:31.274" endtime="20231007 20:05:31.463"/>
+</kw>
+<status status="PASS" starttime="20231007 20:05:31.272" endtime="20231007 20:05:31.464"/>
+</kw>
+<status status="FAIL" starttime="20231007 20:05:09.441" endtime="20231007 20:05:31.464"/>
+</suite>
+<status status="FAIL" starttime="20231007 20:04:34.607" endtime="20231007 20:05:31.465"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="1" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="3" fail="1" skip="0" id="s1" name="Test Suites">Test Suites</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Sample Test Suite 2">Test Suites.Sample Test Suite 2</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Sample Test Suite 3">Test Suites.Sample Test Suite 3</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s3" name="SmokeTests">Test Suites.SmokeTests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231007 20:04:38.431" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000177D126BC08&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session</msg>
+</errors>
+</robot>

@@ -3,7 +3,7 @@ Suite Setup       Suite Setup
 Suite Teardown    Suite Teardown
 Resource          ../../config/appium_config.robot
 Resource          ../../resources/Keywords/General/SetupTeardown.robot
-Resource          ../../resources/Elements/Android/MainMenu.robot
+Resource          ../../resources/PageObjects/MainMenu.robot
 
 *** Test Cases ***
 Verify App Launch3
