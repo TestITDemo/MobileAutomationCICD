@@ -8,17 +8,16 @@ Library           OperatingSystem
 *** Keywords ***
 Suite Setup
     Log    Suite setup
-    Run Process    taskkill    /F    /IM    node.exe
+    Run Process    pkill    -f    node
     Start Process    appium    -a    ${APPIUM_SERVER_HOST}    -p    ${APPIUM_SERVER_PORT}    shell=True    alias=appiumserver    stdout=${CURDIR}/appium_stdout.txt    stderr=${CURDIR}/appium_stderr.txt
 
 Suite Teardown
     Log    Suite teardown
-    Run Process    taskkill    /F    /IM    node.exe
+    Run Process    pkill    -f    node
 
 Test Setup
     Log    ${CURDIR}
-    Open Application    ${APPIUM_SERVER}    app=${ANDROID_APP}    deviceName=${DEVICE_NAME}    platformName=${PLATFORM_NAME}    platformVersion=${PLATFORM_VERSION}    appActivity=${APP_ACTIVITY}    autoGrantPermissions=true    noReset=true    newCommandTimeout=${COMMAND_TIMEOUT}
-    Verify App Started
+    Open Application    ${APPIUM_SERVER}    appium:automationName=${appium:automationName}    appium:deviceName=${DEVICE_NAME}    appium:platformName=${PLATFORM_NAME}    appium:platformVersion=${PLATFORM_VERSION}    appium:appPackage= ${APP_PACKAGE}    appium:appActivity=${APP_ACTIVITY}    appium:autoGrantPermissions=true    appium:noReset=true    appium:newCommandTimeout=${COMMAND_TIMEOUT}    appium:forceAppLaunch=true    Verify App Started
 
 Test Teardown
     Log    Test teardown
