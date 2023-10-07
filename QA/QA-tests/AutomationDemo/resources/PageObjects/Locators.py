@@ -10,8 +10,8 @@ MAIN_MENU = {
     'OS_BUTTON': 'accessibility_id=OS',
     'PREFERENCE_BUTTON': 'accessibility_id=Preference',
     'TEXT_BUTTON': 'accessibility_id=Text',
-    'VIEWS_BUTTON': 'accessibility_id=Views',
-    'TITLE': 'id=android:id/action_bar',
+    #'VIEWS_BUTTON': 'accessibility_id=Views',
+    #'TITLE': 'id=android:id/action_bar',
 }
 
 # Animation Submenu Locators
@@ -27,6 +27,6 @@ ANIMATION_SUBMENU = {
     'MULTIPLE_PROPERTIES_BUTTON': 'accessibility_id=Multiple Properties',
     'REVERSING_BUTTON': 'accessibility_id=Reversing',
     'SEEKING_BUTTON': 'accessibility_id=Seeking',
-    'VIEW_FLIP_BUTTON': 'accessibility_id=View Flip',
-    'FAKE_BUTTON': 'accessibility_id=Fake',
+    #'VIEW_FLIP_BUTTON': 'accessibility_id=View Flip',
+    #'FAKE_BUTTON': 'accessibility_id=Fake',
 }
