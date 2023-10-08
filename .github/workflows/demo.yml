@@ -52,7 +52,7 @@ jobs:
           retention-days: 7
           
    generate_report:
-       needs: buildDockerImage
+       needs: runDockerImage
        runs-on: [self-hosted, testit-runner]
        steps:
        - uses: actions/checkout@v2
