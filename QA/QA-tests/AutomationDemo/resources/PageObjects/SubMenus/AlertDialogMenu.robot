@@ -9,3 +9,4 @@ Open List Dialogs Modal
     
 Verify List Dialog Items
     Check Elements In Menu    ${LIST_DIALOG_MODAL}
+    Capture Page Screenshot
