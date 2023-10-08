@@ -47,5 +47,6 @@ LIST_DIALOG_MODAL = {
     'COMMAND_ONE': '//android.widget.TextView[@text="Command one"]',
     'COMMAND_TWO': '//android.widget.TextView[@text="Command two"]',
     'COMMAND_THREE': '//android.widget.TextView[@text="Command three"]',
+    'COMMAND_FIVE': '//android.widget.TextView[@text="Command five"]',
     'COMMAND_FOUR': '//android.widget.TextView[@text="Command four"]',
 }
