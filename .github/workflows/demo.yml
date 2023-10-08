@@ -50,17 +50,17 @@ jobs:
           name: test-results
           path: results/
           retention-days: 7
-
-   addReportToCommit:
-    needs: runDockerImage
-    runs-on: [self-hosted, testit-runner]
-    steps:
-      - name: Download reports    
-        uses: actions/download-artifact@v3
-        with:
-          name: test-results
-          path: results
-      - name: Send report to commit
-        uses: joonvena/robotframework-reporter-action@v2.3
-        with:
-          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+          
+   generate_report:
+       needs: buildDockerImage
+       runs-on: [self-hosted, testit-runner]
+       steps:
+       - uses: actions/checkout@v2
+       - name: Download reports
+         uses: actions/download-artifact@v1
+         with:
+           name: reports
+       - name: Send report to commit
+         uses: joonvena/robotframework-reporter-action@v2.3
+         with:
+           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
