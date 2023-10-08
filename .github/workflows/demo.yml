@@ -52,10 +52,11 @@ jobs:
           retention-days: 7
 
    addReportToCommit:
+    needs: runDockerImage
     runs-on: [self-hosted, testit-runner]
     steps:
-      - uses: actions/download-artifact@v3
-      - name: Download reports
+      - name: Download reports    
+        uses: actions/download-artifact@v3
         with:
           name: test-results
           path: results
