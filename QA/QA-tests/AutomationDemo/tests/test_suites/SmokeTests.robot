@@ -19,7 +19,7 @@ Verify Animation Menu
     [Documentation]    Verifies Animation menu contains all of the desired items
     [Tags]    Smoke
     [Setup]    Test Setup
-    Click Animation Button
+    Open Animation Menu
     Check Elements In Animation Menu
     Capture Page Screenshot
     [Teardown]    Test Teardown

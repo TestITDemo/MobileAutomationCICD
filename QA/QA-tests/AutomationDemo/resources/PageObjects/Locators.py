@@ -30,3 +30,22 @@ ANIMATION_SUBMENU = {
     #'VIEW_FLIP_BUTTON': 'accessibility_id=View Flip',
     #'FAKE_BUTTON': 'accessibility_id=Fake',
 }
+
+# App Submenu Locators
+APP_SUBMENU = {
+    'ALERT_DIALOGS_BUTTON': 'accessibility_id=Alert Dialogs',
+}
+
+# Alert Dialogs Submenu Locators
+ALERT_DIALOGS_SUBMENU = {
+    'LIST_DIALOG_MODAL': 'android:id/select_dialog_listview',
+    'LIST_DIALOG_BUTTON': 'accessibility_id=List dialog',
+}
+
+# List dialog modal Locators
+LIST_DIALOG_MODAL = {
+    'COMMAND_ONE': '//android.widget.TextView[@text="Command one"]',
+    'COMMAND_TWO': '//android.widget.TextView[@text="Command two"]',
+    'COMMAND_THREE': '//android.widget.TextView[@text="Command three"]',
+    'COMMAND_FOUR': '//android.widget.TextView[@text="Command four"]',
+}
