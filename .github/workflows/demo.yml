@@ -51,7 +51,7 @@ jobs:
           path: results/
           retention-days: 7
           
-   generate_report:
+   generateReport:
        needs: runDockerImage
        runs-on: [self-hosted, testit-runner]
        steps:
