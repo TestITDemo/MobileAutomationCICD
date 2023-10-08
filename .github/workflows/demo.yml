@@ -51,7 +51,7 @@ jobs:
           path: results/
           retention-days: 7
       - name: Download reports
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: test-results
           path: results/
