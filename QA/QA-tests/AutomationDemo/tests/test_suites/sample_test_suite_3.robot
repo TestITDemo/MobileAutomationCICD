@@ -10,7 +10,7 @@ Verify App Launch3
     [Documentation]    Verifies that the app launches successfully.
     [Tags]    Smoke
     [Setup]    Test Setup
-    Click Animation Button
+    Open Animation Menu
     Capture Page Screenshot
     [Teardown]    Test Teardown
 
