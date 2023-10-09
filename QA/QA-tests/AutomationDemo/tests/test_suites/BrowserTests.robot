@@ -10,7 +10,6 @@ Capture Google Page Screenshot
     [Documentation]    Captures Google Page Screenshot
     [Tags]    Smoke
     [Setup]    Browser Setup
-    Open Animation Menu
     Log    Capturing screenshot of google page
     Capture Page Screenshot
     [Teardown]    Browser Teardown
