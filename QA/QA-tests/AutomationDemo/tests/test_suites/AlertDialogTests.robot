@@ -10,7 +10,7 @@ Resource          ../../resources/PageObjects/SubMenus/AlertDialogMenu.robot
 *** Test Cases ***
 Check List Dialog
     [Documentation]    Verifies that the List dialog items are displayed correctly
-    [Tags]    Smoke
+    [Tags]    Alerts
     [Setup]    Test Setup
     Click App Button
     Capture Page Screenshot

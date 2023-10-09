@@ -8,7 +8,7 @@ Resource          ../../resources/PageObjects/MainMenu.robot
 *** Test Cases ***
 Capture Google Page Screenshot
     [Documentation]    Captures Google Page Screenshot
-    [Tags]    Smoke
+    [Tags]    Browser
     [Setup]    Browser Setup
     Log    Capturing screenshot of google page
     Capture Page Screenshot
