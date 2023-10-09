@@ -94,6 +94,12 @@ case $GROUP in
         mkdir /RF/results/SmokeTests
         robot -d results/SmokeTests --timestampoutput /RF/AutomationDemo/tests/test_suites/SmokeTests.robot
         ;;
+    group2)
+        # TOCHECK 2: Adjust the paths and commands for group3 tests
+        mkdir /RF/results
+        mkdir /RF/results/BrowserTests
+        robot -d results/BrowserTests --timestampoutput /RF/AutomationDemo/tests/test_suites/BrowserTests.robot
+        ;;
     *)
         echo "Unknown group: $GROUP. Skipping tests."
         ;;
