@@ -17,7 +17,6 @@ Suite Teardown
     Run Process    pkill    -f    node
 
 Test Setup
-    Log    ${CURDIR}
     Open Application    ${APPIUM_SERVER}    appium:automationName=${appium:automationName}    appium:deviceName=${DEVICE_NAME}    appium:platformName=${PLATFORM_NAME}    appium:platformVersion=${PLATFORM_VERSION}    appium:appPackage= ${APP_PACKAGE}    appium:appActivity=${APP_ACTIVITY}    appium:autoGrantPermissions=true    appium:noReset=true    appium:newCommandTimeout=${COMMAND_TIMEOUT}    appium:forceAppLaunch=true
     Verify App Started
 
@@ -26,3 +25,14 @@ Test Teardown
     Capture Page Screenshot
     Log Source
     Close Application
+
+Browser Setup
+    Open Application    ${APPIUM_SERVER}    appium:automationName=${appium:automationName}    appium:deviceName=${DEVICE_NAME}    appium:platformName=${PLATFORM_NAME}    appium:platformVersion=${PLATFORM_VERSION}    appium:appPackage= com.android.chrome    appium:appActivity=org.chromium.chrome.browser.ChromeTabbedActivity    appium:autoGrantPermissions=true    appium:noReset=true    appium:newCommandTimeout=${COMMAND_TIMEOUT}    appium:forceAppLaunch=true
+    Sleep    3s   # Give Chrome some time to open
+    Go To Url   https://www.google.com
+    Sleep   3s
+    Close Application
+
+Browser Teardown
+    Close Application
+
