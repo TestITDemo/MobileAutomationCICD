@@ -52,6 +52,7 @@ RUN avdmanager create avd --force --name EMU --package "system-images;android-30
 RUN pip3 install robotframework \
                 robotframework-appiumlibrary \
                 robotframework-jsonlibrary \
+                robotframework-requests \
                 clipboard \
                 google-api-python-client \
                 google-auth \
