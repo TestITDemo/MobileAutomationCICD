@@ -34,7 +34,7 @@ jobs:
     strategy:
       matrix:
         script: [run.sh]
-        params: [group1, group2]
+        params: [group1, group2, group3]
     container:
       image: localhost:5000/rf-appium-android:v1
       options: --privileged --expose=4723 --expose=5554 --expose=5037
