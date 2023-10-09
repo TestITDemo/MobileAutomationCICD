@@ -31,7 +31,6 @@ Browser Setup
     Sleep    3s   # Give Chrome some time to open
     Go To Url   https://www.google.com
     Sleep   3s
-    Close Application
 
 Browser Teardown
     Close Application
